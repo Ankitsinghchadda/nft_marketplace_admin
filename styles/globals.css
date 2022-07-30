@@ -14,3 +14,367 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.fc_header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  min-height: 4rem;
+  width: 100%;
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.fc_header_logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.fc_header_logo>h2 {
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+.header_img {
+  width: 10rem;
+  height: 5rem;
+  object-fit: contain;
+  margin-bottom: 0.1rem;
+}
+
+.fc_header_menu {
+  flex: 3;
+}
+
+.hamburgermenu {
+  display: none;
+}
+
+.fc_header_menu_item {
+  display: flex;
+  align-items: left;
+  justify-content: space-around;
+}
+
+.fc_header_menu_item>a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.8rem;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+
+.fc_header_menu_item>a:hover {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+}
+
+.topBotomBordersOut>a:before,
+.topBotomBordersOut>a:after {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 0.125rem;
+  background: rgb(0, 0, 0);
+  content: "";
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.topBotomBordersOut>a:before {
+  top: 0px;
+  transform: translateY(10px);
+}
+
+.topBotomBordersOut>a:after {
+  bottom: 0px;
+  transform: translateY(-10px);
+}
+
+.topBotomBordersOut>a:hover:before,
+.topBotomBordersOut>a:hover:after {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.sc-eKszNL.hTwLpN,
+.sc-olbas.uhQpk {
+  background-color: rgb(36, 43, 184);
+
+}
+
+.sc-jfmDQi.byjoRM {
+  background-color: rgb(201, 216, 253);
+}
+
+.sc-hiMGwR.lcyeQD {
+  color: white;
+}
+
+/* --------Componentes Start---------- */
+.button,
+.button2 {
+  border: none;
+  padding: 0.8rem 1.6rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0.5rem 0.4rem;
+  cursor: pointer;
+  border-radius: 6rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.button2 {
+  border-radius: 0.6rem;
+  width: 100%;
+}
+
+.heading {
+  font-size: 3.3rem;
+  font-weight: 650;
+  color: #183b56;
+  margin-bottom: 2rem;
+}
+
+.heading2 {
+  font-size: 2.2rem;
+  font-weight: 650;
+  color: #183b56;
+  margin-bottom: 2rem;
+}
+
+
+
+/* ------------Componentes End------------ */
+
+
+/* ---- Index Page Start -------- */
+
+.home_container {}
+
+
+
+.home_div {
+  position: relative;
+  padding: 0 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite; */
+}
+
+/* @keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+.home_div::before {
+  content: "";
+  background-image: url('../public/gradient.jpg');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
+}
+
+.home_start_div {
+  position: relative;
+  flex: 1;
+  padding: 6rem 1rem;
+  margin-right: 2rem;
+  /* height: 80vh; */
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  ;
+}
+
+.home_heading {
+  margin-top: 3rem;
+}
+
+.description {
+  color: grey;
+  font-size: 1.3rem;
+  margin: 2rem 0 5rem 0;
+}
+
+.home_start_button {
+  display: flex;
+  align-items: center;
+
+}
+
+
+.home_image_div {
+  flex: 1;
+  margin-left: 2rem;
+}
+
+.view_market {
+  background-color: #566ffe !important;
+  color: rgb(255, 255, 255);
+
+}
+
+.upload_item {
+  background-color: rgb(236, 236, 236);
+}
+
+.marketOverview {
+  background-color: rgb(243, 248, 255);
+  padding: 3rem 5rem;
+
+}
+
+.nftsGrid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+
+}
+
+/* ---- Index Page End -------- */
+
+
+
+/* ---- Nft Card Start -------- */
+.card>p.ownedBy {
+  font-size: 1rem;
+  color: #183b56;
+  font-weight: 600;
+}
+
+.card_main_div {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  margin: 2rem 3rem;
+}
+
+.card {
+  align-self: center;
+  background: #ffffffef;
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
+  border-radius: 15px;
+  width: 350px;
+  max-height: 640px;
+  padding: 25px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: all 0.3s ease;
+}
+
+
+
+.card:hover {
+  transform: scale(1.06);
+}
+
+.card p {
+  padding-right: 10px;
+  font-size: 20px;
+}
+
+.card_body_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.thumbnail img {
+  border-radius: 20px 20px 0px 0px;
+  border-radius: 8px;
+}
+
+h1 {
+  font-family: Outfit;
+  font-style: normal;
+  color: #000000;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.type p {
+  color: grey;
+  font-family: Outfit;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 1rem;
+  line-height: 20px;
+}
+
+.type .icon {
+  margin-right: 4px;
+}
+
+p {
+  color: #8BACD9;
+  font-family: Outfit;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 26px;
+  text-align: left;
+}
+
+.type {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.time p {
+  color: #8BACD9;
+  font-family: Outfit;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.type>p.Nftprice {
+  color: rgb(102, 204, 102);
+}
+
+.creator {
+  padding-top: 20px;
+  border-top: 2px solid #cecece;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.placebid {
+  background-color: #566ffe;
+  color: white;
+  padding: 0.6rem 1rem;
+}
+
+
+/* ---- Nft Card End -------- */
