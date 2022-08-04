@@ -19,7 +19,7 @@ a {
   display: flex;
   align-items: center;
   text-align: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   background-color: #ffffff;
   min-height: 4rem;
   width: 100%;
@@ -102,6 +102,7 @@ a {
   transform: translateY(0px);
 }
 
+
 .sc-eKszNL.hTwLpN,
 .sc-olbas.uhQpk {
   background-color: rgb(36, 43, 184);
@@ -132,6 +133,7 @@ a {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+
 .button2 {
   border-radius: 0.6rem;
   width: 100%;
@@ -146,12 +148,16 @@ a {
 
 .heading2 {
   font-size: 2.2rem;
-  font-weight: 650;
+  font-weight: 600;
   color: #183b56;
   margin-bottom: 2rem;
 }
 
-
+.withdraw_proceed {
+  background-color: #1f40fd;
+  color: white;
+  font-weight: 600;
+}
 
 /* ------------Componentes End------------ */
 
@@ -265,7 +271,6 @@ a {
 }
 
 .card_main_div {
-  font-family: 'Outfit', sans-serif;
   font-size: 18px;
   margin: 2rem 3rem;
 }
@@ -299,18 +304,28 @@ a {
   align-items: center;
 }
 
-.thumbnail img {
-  border-radius: 20px 20px 0px 0px;
-  border-radius: 8px;
+.thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+  border-radius: 0.5rem;
+
 }
 
-h1 {
-  font-family: Outfit;
+.thumbnail img {
+  border-radius: 20px 20px 0px 0px;
+  border-radius: 0.5rem;
+
+}
+
+
+.card-body>h1 {
   font-style: normal;
   color: #000000;
   font-weight: 600;
   font-size: 22px;
-  line-height: 28px;
+  margin-bottom: 0;
 }
 
 .details {
@@ -321,7 +336,6 @@ h1 {
 
 .type p {
   color: grey;
-  font-family: Outfit;
   font-style: normal;
   font-weight: 550;
   font-size: 1rem;
@@ -332,15 +346,14 @@ h1 {
   margin-right: 4px;
 }
 
-p {
+/* p {
   color: #8BACD9;
-  font-family: Outfit;
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
   line-height: 26px;
   text-align: left;
-}
+} */
 
 .type {
   display: flex;
@@ -350,7 +363,6 @@ p {
 
 .time p {
   color: #8BACD9;
-  font-family: Outfit;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -374,7 +386,247 @@ p {
   background-color: #566ffe;
   color: white;
   padding: 0.6rem 1rem;
+  transition: all 0.3s ease-in-out;
 }
 
+.placebid:hover {
+  background-color: #1f40fd;
+  transform: scale(1.1);
+
+}
+
+.auction_card_counter {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.nft_listing_auction_button_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Auction_button,
+.Listing_button {
+  background-color: #566ffe;
+  color: white;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.Auction_button:hover,
+.Listing_button:hover {
+  background-color: #1f40fd;
+  transform: scale(1.1);
+}
 
 /* ---- Nft Card End -------- */
+
+
+/* ---------------Create NFT Start----------------- */
+.create_Nft_div {
+
+  padding: 3rem 4rem;
+  background-color: #e8f2fd;
+
+}
+
+.create_heading {
+  font-weight: 650;
+}
+
+.create_upload_detail_div {
+  margin: 4rem 0;
+  background-color: white;
+  border-radius: 0.6rem;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.uploadItem_div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 2px solid rgb(229, 229, 229);
+  border-radius: 0.6rem;
+  padding: 6rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.uploadItem_div>label>input {
+  display: none;
+}
+
+.drag_drop_area>h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.drag_drop_area>p {
+  color: grey;
+}
+
+.browseButton {
+  border: none;
+  border-radius: 6rem;
+  box-shadow: rgba(0, 0, 0, 0.238) 0px 1px 4px;
+  padding: 0.8rem 1.3rem;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.drag_drop_area>.browseButton {
+  color: #000000;
+
+}
+
+.uploadItem_details_div {
+  flex: 1;
+  padding: 1rem 2rem;
+}
+
+.uploadItem_details_div>.itemUpload_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemUpload_form>label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.itemUpload_form>input {
+  border: 2px solid #f4f8fc;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: #e8f2fd;
+  color: #494949;
+}
+
+.itemUpload_form>input:focus {
+  outline: none;
+  border: 2px solid rgb(230, 233, 234);
+  background-color: white;
+}
+
+.itemUpload_form>input::placeholder {
+  color: rgb(162, 162, 162);
+}
+
+.createItem {
+  background-color: #566ffe;
+  color: white;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.createItem:hover {
+  background-color: #3250fc;
+
+}
+
+/* ---------------Create NFT End----------------- */
+
+
+/* ---------------Marketplace Start----------------- */
+.marketplace_main_div {
+  padding: 3rem 4rem;
+  background-color: #e8f2fd;
+  min-height: 100vh;
+}
+
+.marketplace_heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.marketplace_artwork_heading {
+  margin-left: 3rem;
+}
+
+/* ---------------Marketplace End----------------- */
+
+/* ---------------Profile Start----------------- */
+
+
+.profile_details {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 1rem 4rem;
+  position: relative;
+
+}
+
+.profile_image_div {
+  background-color: #cfcfcf;
+  margin-right: 2rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.profile_image_div img {
+  border-radius: 50%;
+}
+
+.avatar_i {
+  border-radius: 50%;
+}
+
+.profile_nfts {
+  background-color: #e8f2fd;
+  padding: 1rem 4rem;
+  min-height: 80vh;
+}
+
+.profile_nft_grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+}
+
+.noNft_div {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.noNft {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.noNft_div>a {
+  color: #566ffe;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.withdrawalProceeds {
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.withdraw_proceed {
+  margin: 0 2rem;
+}
+
+/* ---------------Profile End----------------- */

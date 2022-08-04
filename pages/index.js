@@ -1,8 +1,23 @@
 import NatureNFT from "../public/NFTNature.jpg";
 import Image from "next/image";
 import NftCard from "../components/NftCard";
+import { useMoralisQuery, useMoralis } from "react-moralis"
+// import { useMoralisWeb3Api } from "react-moralis";
 
 export default function Home() {
+  let chainId = process.env.chainId || 31337
+  const { isWeb3Enabled } = useMoralis()
+  const { data: listedNfts, isFetching: fetchingListedNfts } = useMoralisQuery(
+    "ActiveItem",
+    (query) => query.limit(10).descending("tokenId")
+  )
+  console.log(listedNfts)
+  // const Web3Api = useMoralisWeb3Api();
+  // const fetch = async () => {
+  //   const userEthNFTs = await Web3Api.account.getNFTs();
+  //   console.log(userEthNFTs.result);
+  // };
+  // fetch();
   return (
     <div className="home_container">
       <div className="home_div">
@@ -27,11 +42,29 @@ export default function Home() {
       <div className="marketOverview">
         <h2 className="heading2">Explore</h2>
         <div className="nftsGrid">
-          <NftCard />
-          <NftCard />
-          <NftCard />
-          <NftCard />
-          <NftCard />
+          {isWeb3Enabled ? (
+            fetchingListedNfts ? (
+              <div>Loading...</div>
+            ) : (
+              listedNfts.map((nft) => {
+                console.log(nft.attributes)
+                const { price, nftAddress, tokenId, marketplaceAddress, seller } =
+                  nft.attributes
+                return (
+                  <NftCard
+                    price={price}
+                    nftAddress={nftAddress}
+                    tokenId={tokenId}
+                    marketplaceAddress={marketplaceAddress}
+                    seller={seller}
+                    key={`${nftAddress}${tokenId}`}
+                  />
+                )
+              })
+            )
+          ) : (
+            <div>Web3 Currently Not Enabled</div>
+          )}
         </div>
       </div>
     </div>

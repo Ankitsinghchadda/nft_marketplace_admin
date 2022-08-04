@@ -1,1 +1,10 @@
-{"31337":{"NftMarketplace":["0x5FbDB2315678afecb367f032d93F642f64180aa3"],"InfinityNFT":["0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0"]}}
+{
+  "4": {
+    "NftMarketplace": ["0xd2a05134a22Daa58eea1d71e1450FD2D891E394c"],
+    "InfinityNFT": ["0x320c0B5C059ad8b42B7Bf5B86427F3eEe78EacaF"]
+  },
+  "31337": {
+    "NftMarketplace": ["0x5FbDB2315678afecb367f032d93F642f64180aa3"],
+    "InfinityNFT": ["0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0"]
+  }
+}

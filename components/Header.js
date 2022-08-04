@@ -13,12 +13,12 @@ export default function Header() {
 
             <div className="fc_header_menu showMenu">
                 <div className="fc_header_menu_item topBotomBordersOut">
-                    <a href="#">Home</a>
-                    <a href="#">Marketplace</a>
-                    <a href="#">Explore</a>
-                    <a href="#">Purchase</a>
-                    <a href="#">Dashboard</a>
-                    <a href="#">Create NFT</a>
+                    <Link href="/">Home</Link>
+                    <Link href="/marketplace">Marketplace</Link>
+                    <Link href="/auction">Auction</Link>
+                    <Link href="/profile">Profile</Link>
+                    {/* <Link href="/startAuction">Start Auction</Link> */}
+                    <Link href="/create">Create NFT</Link>
                 </div>
             </div>
             <ConnectButton moralisAuth={false} />
