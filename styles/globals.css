@@ -20,7 +20,7 @@ a {
   align-items: center;
   text-align: center;
   padding: 0.5rem 2rem;
-  background-color: #ffffff;
+  background-color: #000000;
   min-height: 4rem;
   width: 100%;
   border-bottom: 2px solid #e6e6e6;
@@ -33,7 +33,7 @@ a {
 }
 
 .fc_header_logo>h2 {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   margin: 0;
 }
 
@@ -60,7 +60,7 @@ a {
 
 .fc_header_menu_item>a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 1.2rem;
   font-weight: 600;
   padding: 0.8rem;
@@ -70,7 +70,7 @@ a {
 }
 
 .fc_header_menu_item>a:hover {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   background-color: transparent;
 }
 
@@ -80,7 +80,7 @@ a {
   left: 0px;
   width: 100%;
   height: 0.125rem;
-  background: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
   content: "";
   opacity: 0;
   transition: all 0.3s;
@@ -142,15 +142,27 @@ a {
 .heading {
   font-size: 3.3rem;
   font-weight: 650;
-  color: #183b56;
+  color: #ffffff;
   margin-bottom: 2rem;
+  text-shadow: 0px 0px 12px rgb(255 255 255 / 30%);
 }
 
 .heading2 {
   font-size: 2.2rem;
   font-weight: 600;
-  color: #183b56;
+  color: #ffffff;
   margin-bottom: 2rem;
+}
+
+.button3 {
+  background-color: transparent;
+  background-image: linear-gradient(110deg, #23AEE340 0%, #FD3DCE40 100%);
+  border-style: solid;
+  border-width: 1px px 1px 1px 1px;
+  border-color: #23AEE3;
+  border-radius: 8px 8px 8px 8px;
+  box-shadow: 6px 6px 19px 0px rgb(255 134 249 / 50%) inset;
+
 }
 
 .withdraw_proceed {
@@ -164,7 +176,6 @@ a {
 
 /* ---- Index Page Start -------- */
 
-.home_container {}
 
 
 
@@ -174,9 +185,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite; */
+
 }
 
 /* @keyframes gradient {
@@ -192,25 +205,26 @@ a {
     background-position: 0% 50%;
   }
 } */
+
 .home_div::before {
   content: "";
-  background-image: url('../public/gradient.jpg');
+  background-image: url('../public/gradientw.jpg');
   background-size: cover;
   position: absolute;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
-  opacity: 0.75;
+  /* opacity: 0.8; */
 }
 
 .home_start_div {
   position: relative;
   flex: 1;
-  padding: 6rem 1rem;
+  padding: 12rem 1rem;
   margin-right: 2rem;
   /* height: 80vh; */
-  background-color: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  background-color: linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0));
   ;
 }
 
@@ -219,7 +233,7 @@ a {
 }
 
 .description {
-  color: grey;
+  color: rgb(237, 237, 237);
   font-size: 1.3rem;
   margin: 2rem 0 5rem 0;
 }
@@ -232,24 +246,38 @@ a {
 
 
 .home_image_div {
-  flex: 1;
+  flex: 1.2;
   margin-left: 2rem;
 }
 
-.view_market {
-  background-color: #566ffe !important;
-  color: rgb(255, 255, 255);
-
+.view_market,
+.upload_item {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .upload_item {
-  background-color: rgb(236, 236, 236);
+  margin-left: 2rem;
+}
+
+.view_market:hover,
+.upload_item:hover {
+  color: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+  border-color: #06aef0;
 }
 
 .marketOverview {
   background-color: rgb(243, 248, 255);
   padding: 3rem 5rem;
-
+  position: relative;
+  background-color: #111111;
+  background-image: url('../public/gradient3.jpg');
+  background-size: cover;
 }
 
 .nftsGrid {
@@ -546,7 +574,8 @@ a {
 /* ---------------Marketplace Start----------------- */
 .marketplace_main_div {
   padding: 3rem 4rem;
-  background-color: #e8f2fd;
+  background-color: #353535;
+  background-image: url('../public/gradientw.jpg');
   min-height: 100vh;
 }
 
@@ -606,6 +635,7 @@ a {
 }
 
 .noNft {
+  color: white;
   font-size: 1.5rem;
   font-weight: 600;
 }

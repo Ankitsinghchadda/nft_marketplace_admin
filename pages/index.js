@@ -9,7 +9,7 @@ export default function Home() {
   const { isWeb3Enabled } = useMoralis()
   const { data: listedNfts, isFetching: fetchingListedNfts } = useMoralisQuery(
     "ActiveItem",
-    (query) => query.limit(10).descending("tokenId")
+    (query) => query.limit(3).descending("tokenId")
   )
   console.log(listedNfts)
   // const Web3Api = useMoralisWeb3Api();
@@ -31,8 +31,8 @@ export default function Home() {
             experience.
           </p>
           <div className="home_start_button">
-            <button className="view_market button">View Market</button>
-            <button className="upload_item button">Upload Your Item</button>
+            <button className="view_market button3">View Market</button>
+            <button className="upload_item button3">Upload Your Item</button>
           </div>
         </div>
         <div className="home_image_div">
