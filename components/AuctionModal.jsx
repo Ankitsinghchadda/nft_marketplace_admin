@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Input, useNotification } from "web3uikit";
+import { Modal, Input, useNotification, Loading } from "web3uikit";
 import { useWeb3Contract, useMoralis } from "react-moralis";
 import InfinityNFTAbi from "../constants/InfinityNFT.json";
 import NftMarketplaceAbi from "../constants/NftMarketplace.json";
@@ -18,6 +18,8 @@ const AuctionModal = ({
   const nftMarketPlaceAddress = networkMapping["4"].NftMarketplace[0];
   const { runContractFunction } = useWeb3Contract();
   const dispatch = useNotification();
+
+  const [modalOk, setModalOk] = useState(name);
 
   async function approveAndAuction() {
     console.log("Approving...");
@@ -38,8 +40,21 @@ const AuctionModal = ({
 
     await runContractFunction({
       params: approveOptions,
-      onSuccess: () =>
-        handleApproveSuccess(nftAddress, tokenId, auctionInterval, R_price),
+
+      onSuccess: async (tx) => {
+        setModalOk(
+          <div
+            style={{
+              borderRadius: "8px",
+              padding: "0.5rem 3rem",
+            }}
+          >
+            <Loading />
+          </div>
+        );
+        await tx.wait(1);
+        handleApproveSuccess(nftAddress, tokenId, auctionInterval, R_price);
+      },
       onError: (error) => {
         alert(error);
       },
@@ -64,7 +79,10 @@ const AuctionModal = ({
     await runContractFunction({
       params: AuctionOption,
       onSuccess: handleListSuccess,
-      onError: (error) => alert(error.message),
+      onError: (error) => {
+        visibilityFunc(false);
+        alert(error.message);
+      },
     });
   }
   async function handleListSuccess(tx) {
@@ -95,7 +113,7 @@ const AuctionModal = ({
       <Modal
         id="regular"
         isVisible={isVisible}
-        okText={name}
+        okText={modalOk}
         hasCancel={false}
         onCloseButtonPressed={() => visibilityFunc(false)}
         onOk={() => {

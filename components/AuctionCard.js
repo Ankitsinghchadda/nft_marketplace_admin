@@ -5,7 +5,7 @@ import nftAbi from "../constants/InfinityNFT.json";
 import Image from "next/image";
 import Countdown from "react-countdown";
 import { Card, useNotification } from "web3uikit";
-import BidAuctionModal from "./ListingModal";
+import BidAuctionModal from "./BidAuctionModal";
 import { ethers } from "ethers";
 import { Loading } from "web3uikit";
 
@@ -38,7 +38,7 @@ const AuctionCard = ({
   const [tokenName, setTokenName] = useState("");
   const [tokenDescription, setTokenDescription] = useState("");
   const [auctionEnded, setAuctionEnded] = useState(false);
-  // const dispatch = useNotification()
+  const dispatch = useNotification()
 
   const { runContractFunction: getTokenURI } = useWeb3Contract({
     abi: nftAbi,
@@ -87,8 +87,19 @@ const AuctionCard = ({
 
   const Completionist = () => {
     setAuctionEnded(true);
-    return <button className=" AuctionEnd button" onClick={() => endAuction()}>Auction Ended</button>;
+    return "00 : 00 : 00";
+
   };
+
+  async function handleEndAuction(tx) {
+    dispatch({
+      type: "success",
+      message: "Auction Ended Successfuly",
+      title: "Auction Ended",
+      position: "topR",
+    });
+  }
+
 
   useEffect(() => {
     if (isWeb3Enabled) {
@@ -146,7 +157,10 @@ const AuctionCard = ({
                 </Countdown>
               </div>
               <div className="creator">
-                <button className="placebid button2" onClick={() => setListingModal(true)}>Bid</button>
+                {!auctionEnded ? <button className="placebid button2" onClick={() => setListingModal(true)}>Bid</button> :
+                  <button className="placebid button2" onClick={() => endAuction({
+                    onSuccess: () => { handleEndAuction() }
+                  })}>Auction Ended</button>}
               </div>
             </div>
           </div>

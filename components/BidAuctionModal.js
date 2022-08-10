@@ -21,7 +21,7 @@ const BidAuctionModal = ({
 
 
     async function bidAuction() {
-        console.log("Ok! Now time to list");
+        console.log("Ok! let's bid!");
         const listOptions = {
             abi: NftMarketplaceAbi,
             contractAddress: nftMarketPlaceAddress,
@@ -56,7 +56,7 @@ const BidAuctionModal = ({
             <Modal
                 id="regular"
                 isVisible={isVisible}
-                okText={name}
+                okText={"Bid Auction"}
                 hasCancel={false}
                 onCloseButtonPressed={() => visibilityFunc(false)}
                 onOk={() => {

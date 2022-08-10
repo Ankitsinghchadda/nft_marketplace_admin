@@ -458,7 +458,9 @@ a {
 .create_Nft_div {
 
   padding: 3rem 4rem;
-  background-color: #e8f2fd;
+  background-image: url('../public/gradient3.jpg');
+  min-height: 90vh;
+
 
 }
 
@@ -470,9 +472,10 @@ a {
   margin: 4rem 0;
   background-color: white;
   border-radius: 0.6rem;
-  padding: 1rem 2rem;
+  padding: 3rem 2rem;
   display: flex;
   align-items: center;
+
 }
 
 .uploadItem_div {
@@ -486,6 +489,7 @@ a {
   border-radius: 0.6rem;
   padding: 6rem 2rem;
   background-color: #f9f9f9;
+
 }
 
 .uploadItem_div>label>input {
@@ -599,13 +603,14 @@ a {
   justify-content: left;
   padding: 1rem 4rem;
   position: relative;
+  background-color: #000000;
 
 }
 
 .profile_image_div {
   background-color: #cfcfcf;
   margin-right: 2rem;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   border-radius: 50%;
 }
 
@@ -618,7 +623,8 @@ a {
 }
 
 .profile_nfts {
-  background-color: #e8f2fd;
+  background-image: url('../public/gradientw.jpg');
+  background-size: cover;
   padding: 1rem 4rem;
   min-height: 80vh;
 }

@@ -23,7 +23,7 @@ const profile = () => {
   const { account, isWeb3Enabled } = useMoralis();
   const Web3Api = useMoralisWeb3Api();
   const nftMarketPlaceAddress = networkMapping["4"].NftMarketplace[0];
-  const { dispatch } = useNotification();
+  const dispatch = useNotification();
   const { data: listedNfts, isFetching: fetchingListedNfts } = useMoralisQuery(
     "ActiveItem",
     (query) => query.limit(10).descending("tokenId")
@@ -114,7 +114,7 @@ const profile = () => {
         </div>
         <span
           style={{
-            color: "#183b56",
+            color: "white",
             letterSpacing: "0.05rem",
             fontSize: "1.2rem",
             fontWeight: "600",
@@ -125,7 +125,7 @@ const profile = () => {
         <div className="withdrawalProceeds">
           <span
             style={{
-              color: "#183b56",
+              color: "white",
               letterSpacing: "0.05rem",
               fontSize: "1.2rem",
               fontWeight: "600",
