@@ -1,12 +1,17 @@
 import NatureNFT from "../public/NFTNature.jpg";
+import { useEffect } from "react";
 import Image from "next/image";
 import NftCard from "../components/NftCard";
 import { useMoralisQuery, useMoralis } from "react-moralis"
+import { useChain } from "react-moralis"
+import Link from "next/link"
+import { useRouter } from 'next/router'
 // import { useMoralisWeb3Api } from "react-moralis";
 
 export default function Home() {
-  let chainId = process.env.chainId || 31337
-  const { isWeb3Enabled } = useMoralis()
+  const { isWeb3Enabled, chainId, enableWeb3 } = useMoralis()
+  const { switchNetwork } = useChain()
+  const router = useRouter()
   const { data: listedNfts, isFetching: fetchingListedNfts } = useMoralisQuery(
     "ActiveItem",
     (query) => query.limit(3).descending("tokenId")
@@ -18,6 +23,27 @@ export default function Home() {
   //   console.log(userEthNFTs.result);
   // };
   // fetch();
+  const enable_Web3 = async () => {
+    await enableWeb3();
+  }
+  console.log(typeof (chainId));
+
+  useEffect(() => {
+    if (isWeb3Enabled && chainId != "0x4") {
+      alert("Please switch to the rinkeby network");
+      switchNetwork("0x4")
+    }
+    else {
+      console.log("not connected to rinkeby")
+      if (!isWeb3Enabled) {
+        enable_Web3()
+      }
+    }
+
+  }, [chainId, isWeb3Enabled])
+
+
+
   return (
     <div className="home_container">
       <div className="home_div">
@@ -31,8 +57,8 @@ export default function Home() {
             experience.
           </p>
           <div className="home_start_button">
-            <button className="view_market button3">View Market</button>
-            <button className="upload_item button3">Upload Your Item</button>
+            <button className="view_market button3" onClick={() => router.push("/marketplace")}>View Market</button>
+            <button className="upload_item button3" onClick={() => router.push("/create")}>Upload Your Item</button>
           </div>
         </div>
         <div className="home_image_div">

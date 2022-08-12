@@ -189,7 +189,6 @@ const create = () => {
               placeholder="Ex: 1.5 ETH"
             /> */}
           </form>
-          <p>Service Fee : 2.5%</p>
           <button className="createItem button2" onClick={handleCreate}>Create</button>
         </div>
       </div>
