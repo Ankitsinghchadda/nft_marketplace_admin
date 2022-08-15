@@ -31,7 +31,7 @@ const create = () => {
       return;
     }
     const file_l = event.target.files;
-    console.log(file_l);
+
     setfile(file_l[0])
     setUploaded(file_l[0].name);
     setImage(URL.createObjectURL(file_l[0]));
@@ -93,17 +93,6 @@ const create = () => {
       const response = await Moralis.executeFunction(contractOptions);
       console.log(response);
 
-      // await contractProcessor.fetch({
-      //   params: contractOptions,
-      //   onSuccess: (result) => { console.log(result); },
-      //   onError: (error) => { console.log(error); }
-      // })
-      // const response = await contract.methods
-      //   .mint(metadataurl)
-      //   .send({ from: user.get("ethAddress") });
-      // // Get token id
-      // const tokenId = response.events.Transfer.returnValues.tokenId;
-      // Display alert
       alert(
         `NFT successfully minted. Contract address - ${InfinityNFTAddress} and Token ID - ${"tokenId"}`
       );
@@ -130,7 +119,7 @@ const create = () => {
   };
   return (
     <div className="create_Nft_div">
-      <span className="create_heading heading2">Create your collectible</span>
+      <span className="create_heading heading2">Create your NFT</span>
 
       <div className="create_upload_detail_div">
         <div className="uploadItem_div">

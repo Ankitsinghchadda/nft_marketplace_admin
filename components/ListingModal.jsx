@@ -15,6 +15,7 @@ const ListingModal = ({
 }) => {
   // const { chainId, account, isWeb3Enabled } = useMoralis();
   const [price, setPrice] = useState(0);
+  const [modalOk, setModalOk] = useState(name);
   const nftMarketPlaceAddress = networkMapping["4"].NftMarketplace[0];
 
   const { runContractFunction } = useWeb3Contract();
@@ -37,7 +38,10 @@ const ListingModal = ({
 
     await runContractFunction({
       params: approveOptions,
-      onSuccess: () => handleApproveSuccess(nftAddress, tokenId, N_price),
+      onSuccess: async (tx) => {
+        await tx.wait(1);
+        handleApproveSuccess(nftAddress, tokenId, N_price);
+      },
       onError: (error) => {
         alert(error);
       },
@@ -99,7 +103,7 @@ const ListingModal = ({
       <Modal
         id="regular"
         isVisible={isVisible}
-        okText={name}
+        okText={modalOk}
         hasCancel={false}
         onCloseButtonPressed={() => visibilityFunc(false)}
         onOk={() => {
