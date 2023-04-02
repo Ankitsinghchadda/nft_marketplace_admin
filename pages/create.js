@@ -156,6 +156,7 @@ const create = () => {
               className="item_title"
               name="item_title"
               placeholder="Ex: Liquid Forest Princess"
+              autoComplete="off"
               onChange={(event) => { setNftDetail({ ...nftDetail, name: event.target.value }) }}
             />
             <label htmlFor="item_description">
@@ -165,6 +166,7 @@ const create = () => {
               type="text"
               className="item_description"
               name="item_description"
+              autoComplete="off"
               placeholder="Ex: This is a beautiful painting by a famous artist"
               onChange={(event) => { setNftDetail({ ...nftDetail, description: event.target.value }) }}
             />

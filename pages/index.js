@@ -16,17 +16,10 @@ export default function Home() {
     "ActiveItem",
     (query) => query.limit(3).descending("tokenId")
   )
-  console.log(listedNfts)
-  // const Web3Api = useMoralisWeb3Api();
-  // const fetch = async () => {
-  //   const userEthNFTs = await Web3Api.account.getNFTs();
-  //   console.log(userEthNFTs.result);
-  // };
-  // fetch();
+
   const enable_Web3 = async () => {
     await enableWeb3();
   }
-  console.log(typeof (chainId));
 
   useEffect(() => {
     if (isWeb3Enabled && chainId != "0x4") {

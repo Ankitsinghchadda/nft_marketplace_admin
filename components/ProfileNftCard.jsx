@@ -37,10 +37,6 @@ const ProfileNftCard = ({
   const dispatch = useNotification();
 
   const { runContractFunction } = useWeb3Contract();
-  const isOwnedByUser = owner_of === account || seller === undefined;
-  const formattedSellerAddress = isOwnedByUser
-    ? "you"
-    : truncateStr(seller || "", 15);
 
   async function cancelListing() {
     const cancelListingOptions = {

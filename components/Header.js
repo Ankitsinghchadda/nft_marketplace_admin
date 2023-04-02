@@ -19,7 +19,7 @@ export default function Header() {
                     <Link href="/profile">Profile</Link>
                     {/* <Link href="/startAuction">Start Auction</Link> */}
                     <Link href="/create">Create NFT</Link>
-                    <Link href="/createCollection">Create NFT Collection</Link>
+                    {/* <Link href="/createCollection">Create NFT Collection</Link> */}
                 </div>
             </div>
             <ConnectButton moralisAuth={false} />

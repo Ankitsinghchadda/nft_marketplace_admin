@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Input, useNotification } from "web3uikit";
+import { Modal, Input, useNotification, Loading } from "web3uikit";
 import { useWeb3Contract, useMoralis } from "react-moralis";
 import NftMarketplaceAbi from "../constants/NftMarketplace.json";
 import InfinityNFTAbi from "../constants/InfinityNFT.json";
@@ -39,6 +39,16 @@ const ListingModal = ({
     await runContractFunction({
       params: approveOptions,
       onSuccess: async (tx) => {
+        setModalOk(
+          <div
+            style={{
+              borderRadius: "8px",
+              padding: "0.5rem 3rem",
+            }}
+          >
+            <Loading />
+          </div>
+        );
         await tx.wait(1);
         handleApproveSuccess(nftAddress, tokenId, N_price);
       },
